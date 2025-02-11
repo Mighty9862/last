@@ -11,7 +11,7 @@ import random
 import asyncio
 
 # Database setup
-DATABASE_URL = "postgresql+asyncpg://admin:admin@db:5432/test_new"
+DATABASE_URL = "postgresql+asyncpg://admin:admin@db_test:5432/test_new"
 #DATABASE_URL = "postgresql+asyncpg://admin:12439862@localhost/test_new"
 engine = create_async_engine(DATABASE_URL)
 async_session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)

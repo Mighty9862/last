@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  web:
+  web_test:
     build: .
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - db_test
     environment:
-      - DATABASE_URL=postgresql+asyncpg://admin:admin@db:5432/test_new
+      - DATABASE_URL=postgresql+asyncpg://admin:admin@db_test:5432/test_new
     volumes:
       - .:/app
 
-  db:
+  db_test:
     image: postgres:15-alpine
     restart: always
     environment:
